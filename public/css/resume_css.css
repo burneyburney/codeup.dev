@@ -1,0 +1,28 @@
+/*/css/resume_css.css*/
+ul {
+	list-style-type: none;
+}
+
+body {
+  padding-top: 0px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+body {
+	background-color:white;
+}
+
+*{
+	font-weight:bold;
+/*	font-family:Arial, Helvetica, sans-serif;
+*/	color:black;
+}
+
+.margin{
+	margin-left: 200px;
+	margin-right:200px;
+
+}

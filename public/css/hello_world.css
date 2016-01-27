@@ -1,0 +1,62 @@
+h2{
+	color: red;
+	text-decoration: underline;
+
+	/*font*/
+	/*underlined*/
+	/*change color*/
+}
+
+body{
+	background-image: url(http://www.clipartbest.com/cliparts/9T4/oq7/9T4oq74qc.png);
+/*	background-repeat-y: ;
+*/	background-position: center;
+background-size: 60rem}
+
+ul{
+	list-style-type: lower-greek;
+}
+
+*{
+	font-family: "Arial Black", Gadget, sans-serif;
+}
+
+/*Hey look some anchor tags!*/
+a:visited{
+	color: pink;
+	background-color: red;
+}
+a:link{
+	color:green;
+	background-color: white;
+}
+a:hover{
+	color:yellow;
+	background-color: black;
+}
+
+a:active{
+	color:purple;
+	background-color: blue;
+}
+
+/*table duhh*/
+table{
+	color: purple;
+}
+
+/*table row ...*/
+tr{
+	color:grey;
+}
+
+/*table header/heading.*/
+th{
+	color:brown;
+}
+
+/*table data*/
+td{
+	color:black;
+}
+/*you need to make.. table cells have color*/

@@ -1,0 +1,53 @@
+/*star means everything, wild card, selector of all
+Below is hte format for a style definition
+selector{
+	backgorund-color:grey;
+	property2: value2;
+	property3: value3;
+}
+*/
+*{
+	color:purple;
+}
+
+h2 {
+    color: red;
+    text-decoration: underline;
+    background-color: peachpuff;
+}
+
+body {
+	background-color: whitesmoke;
+}
+
+.login_form {
+	background-color: green;
+}
+
+.multiple_choice_test{
+	font-family: Impact;
+	background-color: brown;
+}
+
+.main{
+	background-color: pink;
+}
+
+.section{
+	background-color: orange;
+}
+
+#username{
+	color:red;
+	background-color: orange;
+}
+
+li{
+	display: inline;
+}
+
+/*site.css
+copywrites belong to me, not you.
+*/
+
+

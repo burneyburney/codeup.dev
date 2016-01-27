@@ -1,0 +1,61 @@
+/*css_positioning.css */
+.colorbox{
+	text-decoration:bold;
+	color: white;
+	width:  50px;
+ 	height: 50px;
+	border: 1px solid black;
+	padding: 10px;
+	float:left;
+}
+
+#red{
+	background-color:red;
+	margin:10px;
+}
+
+#orange{
+	 background-color:orange;
+	 margin:10px 10px 10px 10px;	 
+}
+
+#yellow{
+	 text-shadow:1px 1px black;
+	 background-color: yellow;
+	 margin:10px 10px 10px 10px;	
+}
+
+#green{
+	 background-color:green;	
+	 margin:10px 10px 10px 10px;	
+	 
+	 left:200px; 
+}
+
+#blue{
+	 background-color:blue;
+ 	 margin:10px 10px 10px 10px;	
+}
+
+#violet{
+	 background-color: violet;
+	 margin:10px 10px 10px 10px;	
+
+}
+
+#image{
+	position:fixed;
+	
+}
+
+.greenblueviolet{
+	position:relative;
+	top:100px;
+	left:-276px;
+}
+
+
+.codeuparrow{
+	bottom:190px;
+
+}
