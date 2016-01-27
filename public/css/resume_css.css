@@ -26,3 +26,28 @@ body {
 	margin-right:200px;
 
 }
+
+
+
+a:focus{
+	border-color: black;
+}
+
+.welcomeblock{
+	margin-top: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
