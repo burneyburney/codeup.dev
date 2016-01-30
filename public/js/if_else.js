@@ -1,9 +1,5 @@
 // ignore these lines for now
 // just know that the variable 'color' will end up with a random value from the colors array
-var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-var color = colors[Math.floor(Math.random()*colors.length)]; //random
-
-var favorite = 'yellow';    
 
 // TODO: Create a block of if/else statements to check for every color except indigo and violet.
 // TODO: When a color is encountered log a message that tells the color, and an object of that color.
@@ -17,6 +13,15 @@ var favorite = 'yellow';
 
 
 // dont do indigo and violet
+
+
+var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+var color = colors[Math.floor(Math.random()*colors.length)]; //random
+
+var favorite = 'yellow';    
+
+
+
 
 if(color == "red") {
 console.log(color + " is the color of Mars")
@@ -37,7 +42,7 @@ else if(color == "indigo" || color == "violet"){
 console.log("You typed indigo or violet... idk which one though")
 }
 else{
-	console.log("NO!");
+	console.log("I do not know anything by that color!");
 }
 
 console.log((color == "yellow")? "YOU PICKED YELLOW!!!!" : "cool..but not as cool as yellow");
