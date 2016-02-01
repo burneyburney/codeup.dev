@@ -1,0 +1,43 @@
+<!-- make a funcction that return the sum (+) of 2 paramenters
+	Michael Burney
+	Feb 1st 2016
+	2 parameter calculator
+ -->
+
+ <html>
+ <head>
+ 	<title>Extra_exercises_js.html</title>
+ </head>
+ <body>
+ 	<h1>extra_exercises_js.html</h1>
+	 <script>
+	 function doMath(){
+	 	var a = prompt("Enter A Number Please");
+	 	var b = prompt("Enter an additional Number please");
+	    var c = prompt("type whether you would like the 'sum' , 'difference' , 'product' , 'quotient' , 'remainder' ");
+	    var a1 = parseInt(a);
+	 	var b2 = parseInt(b);
+	 	 if (c == "sum"){
+	 		console.log(a1+b2);
+	 	} else if (c == "difference"){
+	 		console.log(a1 - b2);
+	 	} else if (c == "product"){
+	 		console.log(a1 * b2);
+	 	} else if (c == "quotient"){
+	 		console.log(a1 / b2);
+	 	} else if(c == "remainder" ){
+	 		console.log(a1 % b2);
+	 	} else{
+	 		console.log("Invalid Command");
+	 		doMath();
+	 	}
+
+	 }
+	 doMath();
+	
+
+
+	
+	 </script>
+ </body>
+ </html>

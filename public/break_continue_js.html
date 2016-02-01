@@ -1,0 +1,75 @@
+<!-- break continue js html -->
+<!-- Michael Burney
+Feb 1 2016 
+re do this please-->
+
+<html>
+<head>
+	<title> break_continue_js.html</title>
+</head>
+<body>
+	<h1>break_continue_js.html</h1>
+	<script>
+	"use strict";
+		// Math.floor((Math.random()*50)+1)
+// 		Use Math.floor((Math.random()*50)+1) to generate a random number betweem 1 and 50. If the number isn't odd, keep getting a new random number till it is odd.
+
+// Use console.log to log all the odd numbers from 1 to 50, except the random odd number you generated, by using break and continue. Try to match the output shown below (your random number will be different).
+
+
+
+		// THIS WILL GIVE YOU A RANdOM ODD NUMBER EVERYTIME
+		var rand =  Math.floor((Math.random()*50)+1)
+
+		do{
+			rand =  Math.floor((Math.random()*50)+1);
+			if (rand % 2 == 1){
+				break;
+		} vwhile (true);
+
+		console.log("Your random odd number is: " + rand);
+
+		// STEP 1 COMPLETE
+
+		for(var i = 1; i <= 100; i++) {
+			if (i % 2 == 0) {
+				continue;
+			} else if (i == rand) {
+				console.log("Yikes! Skipping number: " + i);
+				continue;
+			}
+			console.log("Here is an odd number: " + i);
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		// var i = -1;
+		// while(i <= 48){
+		// 	i++;
+		// 	console.log(i+=1);
+		// 		if (randOdd == i){
+		// 			console.log("UH OH! im skipping " + randOdd)
+		// 			continue;
+		// 	}
+
+
+		// }
+
+	</script>
+</body>
+</html>
