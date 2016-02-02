@@ -1,0 +1,41 @@
+<!-- Michael Burney
+Feb 2nd 2016
+user_interaction_js
+alerts/prompts/confirm/etc.. -->
+
+<!doctype html>
+<html>
+<head>
+	<title>user_interaction_js</title>
+</head>
+<body>
+	<h1>user_interaction_js</h1>
+	<script>
+
+		// repetative Do WHILE statement
+		do{
+		var name = prompt("put in yo namez");
+		}while(name == "null" || name == "")
+
+		// if name = words then do this
+		if (typeof name === "string") {
+			var welcome = alert("Welcome! " + name + "!");
+		}
+
+		// pizza question w/ response for Y or N
+		var pizza = confirm("Hey! " + name + "!" + " Do you like pizza!?");
+
+		// if PIZZA = T (do this)  ||  if PIZZA = F (do that)
+		if (pizza ==  true){
+			console.log("PIZZA PARTAY @ MY HOUSE !!!! wooOO00");
+		} else {
+			console.log("go away " + name);
+		}
+
+
+
+
+	</script>
+
+</body>
+</html>

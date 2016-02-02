@@ -1,0 +1,60 @@
+<html>
+<head>
+	<title>function_practice.html</title>
+</head>
+<body>
+	<h1>function_practice.html</h1>
+	<!-- add code that makes sure that the parameters are numbers -->
+	<!-- check to see if parameters are numbers -->
+	
+	<!-- make a function that returns TorF  -->
+
+
+ 	<!-- basically a 2 parameter calculator  -->
+	 <script>
+
+	 // start function
+	 function doMath(){
+	 	// prompt for Variable Input
+	 	var firstNumb = prompt("Enter A Number Please");
+	 	var secondNumb = prompt("Enter an additional Number please");
+
+	 	 // parse out numbers
+	    var a = parseInt(firstNumb);
+	 	var b = parseInt(secondNumb);
+
+	 	// add sub mult or divide
+	    var c = prompt("type whether you would like the 'sum' , 'difference' , 'product' , 'quotient' , 'remainder' ");
+	   
+	 	// do math 
+	 	 if (c == "sum"){
+	 		var sum1 = console.log(a + b);
+
+
+	 		// 	if (sum1 == isNaN(sum1)){
+			// return console.log("this aint no numba");
+		}
+
+	 	 else if (c == "difference"){
+	 		console.log(a - b);
+	 	} else if (c == "product"){
+	 		console.log(a * b);
+	 	} else if (c == "quotient"){
+	 		console.log(a / b);
+	 	} else if(c == "remainder" ){
+	 		console.log(a % b);
+	 	} else if(isNaN(difference) || isNaN(product) || isNaN(quotient)){
+	 		alert("you must use numbers")
+	 		return false;
+	 	} else{
+	 		console.log("Invalid Command");
+	 		// replay function
+	 		doMath();
+	 	}
+	 }
+	 // start function
+	 doMath();
+	
+	 </script>
+</body>
+</html>
