@@ -12,6 +12,7 @@
 
  	<!-- basically a 2 parameter calculator  -->
 	 <script>
+	 "use strict";
 
 	 // start function
 	 function doMath(){
@@ -25,17 +26,11 @@
 
 	 	// add sub mult or divide
 	    var c = prompt("type whether you would like the 'sum' , 'difference' , 'product' , 'quotient' , 'remainder' ");
-	   
+
 	 	// do math 
 	 	 if (c == "sum"){
 	 		var sum1 = console.log(a + b);
-
-
-	 		// 	if (sum1 == isNaN(sum1)){
-			// return console.log("this aint no numba");
-		}
-
-	 	 else if (c == "difference"){
+		} else if (c == "difference"){
 	 		console.log(a - b);
 	 	} else if (c == "product"){
 	 		console.log(a * b);
@@ -54,6 +49,8 @@
 	 }
 	 // start function
 	 doMath();
+
+	}
 	
 	 </script>
 </body>

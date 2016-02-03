@@ -7,35 +7,56 @@ alerts/prompts/confirm/etc.. -->
 <html>
 <head>
 	<title>user_interaction_js</title>
+	<style>
+		.button{
+			background-color: yellow;
+			margin: 50px;
+		}
+
+	</style>
 </head>
 <body>
-	<h1>user_interaction_js</h1>
+	<center><h1>user_interaction_js</h1></center>
 	<script>
 
-		// repetative Do WHILE statement
-		do{
-		var name = prompt("put in yo namez");
-		}while(name == "null" || name == "")
+		// wrap it in a function
+		function questionTime(){
+			// repetative Do WHILE statement
+			do{
+			var name = prompt("Type your name below");
+			}while(name == "" || name == "false" || name === null|| name == "null")
 
-		// if name = words then do this
-		if (typeof name === "string") {
-			var welcome = alert("Welcome! " + name + "!");
+			// trim the variable
+			// var name == name.trim();
+
+			// if name = words then do this
+			if (typeof name === "string") {
+				// var name = name.trim();
+				var welcome = alert("Welcome! " + name + "!");
+			}
+
+			// pizza question w/ response for Y or N
+			var pizza = confirm("Hey! " + name + "!" + " Do you like pizza!? \n (press 'OK' for YES or press 'Cancel' for NO");
+
+			// if PIZZA = T (do this)  ||  if PIZZA = F (do that)
+			if (pizza ==  true){
+				console.log("PIZZA PARTAY @ MY HOUSE !!!! wooOO00");
+			} else {
+				console.log("go away " + name + " no one likes you anyways");
+			}
 		}
-
-		// pizza question w/ response for Y or N
-		var pizza = confirm("Hey! " + name + "!" + " Do you like pizza!?");
-
-		// if PIZZA = T (do this)  ||  if PIZZA = F (do that)
-		if (pizza ==  true){
-			console.log("PIZZA PARTAY @ MY HOUSE !!!! wooOO00");
-		} else {
-			console.log("go away " + name);
-		}
-
-
-
-
+		// start function
+		questionTime();
 	</script>
+
+<!-- button to call function -->
+<div class = button>
+<center><button type="button" onclick="questionTime();">Click to go again!</button></center>
+</div>
+
+<CENTER><p>press the button to go for Round 2!</p></center> 
+
+
 
 </body>
 </html>
