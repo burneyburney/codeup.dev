@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>objects_intro_js.html</title>
+</head>
+<body>
+	<h1>objects_intro_js.html</h1>
+	<script>
+
+		var person ={ 
+			"firstName" : "Michael",
+			"lastName" : "Burney",
+			"sayHello" : function(){
+			// Add a say hello method to the person object that alerts hello using the firstName and lastName properties.
+				alert("hello " + this.firstName + " " + this.lastName);
+			}
+		}
+		// \run it/
+			person.sayHello();
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+		// in class car object
+
+		// var car ={
+		// 	"make" : "Chevy",
+		// 	"model" : "Corvette",
+		// 	"years" : [1999, 1985, 1967],
+		// 	"honk" : function(){
+		// 		return 'HONK HONK';
+		// 	},
+
+		// 	"getMakeAndModel" : function(){
+		// 		return "The car is a " + this.make + " " + this.model;
+		// 	},
+
+		// 	"MakeAndModel" : function(){
+		// 		return this.getMakeAndModel();
+		// 	},
+		// 	"getFirstYear" : function(){
+		// 		var yearsInOrder = this.years.sort();
+		// 		return yearsInOrder[0];
+		// 	}
+
+		// }
+	</script>
+
+
+</body>
+</html>

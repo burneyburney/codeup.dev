@@ -1,0 +1,46 @@
+<!-- split_join_arrays_js.html -->
+<!-- michael burney -->
+<!-- split and joining arrays -->
+
+
+<!doctype html>
+<html>
+<head>
+	<title>split_join_arrays_js.html</title>
+</head>
+<body>
+	<center><h1>split_join_arrays_js.html</h1></center>
+	<script>
+
+		// todo:
+		// Copy the array of planets you created in the last lesson.
+		var planets = ["Mercury", "Venus" , "Earth" , "Mars" , "Jupiter" , "Saturn" , "Uranus" , "Neptune"];
+
+		// todo: Join the planets array with pipes (|) to create a variable named 'planetsAsString'.
+		var planetsAsString = planets.join("|");
+		console.log("these are the planets as a string");
+		console.log(planetsAsString);
+
+		// todo: Split the 'planetsAsString' variable by pipes (|) to create a variable named 'planetsAsArray'.
+		console.log("split the planets from the pipes");
+		var planetsAsArray = planetsAsString.split("|");
+		console.log(planetsAsArray);
+	
+
+
+
+	// build your own join function
+	// build a loop that iterates across an array and converts it into a string
+	planets.forEach(function(planets,index,array){
+		console.log(planets);
+	});
+
+	console.log(planets.join(", "))
+
+
+	</script>
+
+
+</body>
+</html>
+
