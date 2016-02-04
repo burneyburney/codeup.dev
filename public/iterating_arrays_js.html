@@ -1,0 +1,62 @@
+ <!-- iterating arrays js inline  -->
+<!-- create array  -->
+<!doctype html>
+<html>
+<head>
+	<title>iterating_arrays_js.html</title>
+</head>
+<body>
+	<h1>iterating_arrays_js.html</h1>
+	<script>
+
+	// wraped in function
+	(function(){
+		// todo:
+		// Create an array of 4 names using literal array notation, in a variable called 'names'.
+		var names = ["Rick" , "Morty" ,"Beth" , "Jerry"]
+
+		// todo:
+		// Create a log statement that will log the number of elements in the names array.
+		console.log("Number of items in array: " + names.length);
+
+		// todo:
+		// Create log statements that will print each of the names array elements individually.
+		// console.log("The first item in the array is: " 	+ names[99 - 99] ); 	//names[0]
+		// console.log("The second item in the array is: " + names[2 - 1] ); 		//names[1]
+		// console.log("The third item in the array is: " 	+ names[5 * 2 - 8] ); 	//names[2]
+		// console.log("The fourth item in the array is: " + names[100 / 25 - 1] );//names [3]
+
+		for(var i = 0; i < names.length; i++){
+			console.log("Element " + i + " is " + names[i]);
+		}
+
+		// correct
+		// forEach iteration
+		console.log(" Now lets use For-Each-Iteration")
+		names.forEach(function(names,index,array){
+			console.log("This is index number " + i + " name: " + names)
+		});
+
+
+		// loop w/ iterator
+		// console.log("=-=-loop me w/ an iterator=-=-")
+		// for(var i = 0; i < names.length; i++){
+		// 	console.log("The name @ index " + i + " is " + names[i]);
+		// }
+
+
+		// FOR EACH ITERATION
+		// console.log("=-=-FOR-EACH-ITERATION=-=-")
+		// names.forEach(function(element,index,array){
+		// 	console.log("The name @ index " + index + " is " + name)
+		// });
+
+
+
+})
+// run it
+();
+
+	</script>
+</body>
+</html>

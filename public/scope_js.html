@@ -1,0 +1,52 @@
+<!-- Michael Burney Feb 3 2016 -->
+<!--  scope_js.html
+-->
+<!doctype html>
+<html>
+<head>
+	<title>scope_js.html</title>
+</head>
+<body>
+	<script>
+
+	(function() {
+
+		// do not worry about the details of this line
+		// just know that it generates a random number between 1 and 100
+		var random = Math.floor((Math.random()*100)+1);
+		var myNameIs = 'Burney'; // todo: Fill in your name here.
+		var isNumberOdd = isOdd(random);
+
+		sayHello(myNameIs);
+
+		// todo:
+		// Create a function called 'sayHello' that takes a parameter 'name'.
+		// When called, the function should log a message that says hello from the passed in name.		
+		// todo: Call the function 'sayHello' passing the variable 'myNameIs' as a parameter.
+		function sayHello(name){
+			console.log("Hello " + name)
+
+		}
+
+		// todo:
+		// Create a function called 'isOdd' that takes a number as a parameter.
+		// console.log((random % 2 == 0)? "The number is even": "The number is odd");
+		// The log should tell the number passed in and whether it is odd or not.
+		// todo: Call the function 'isOdd' passing the variable 'random' as a parameter.
+		function isOdd(random){
+			if (random % 2 == 0) {
+				console.log("not odd")
+			} else{
+				console.log("Is odd")
+			};
+		}
+	
+
+})
+
+// start it off
+();	
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!-- Michael Burney -->
+<!-- Feb 3 2016 -->
+<!-- running through basic array commands went over in class -->
+
+
+<!doctype html>
+<html>
+<head>
+	<title>manipulating_arrays_js.html</title>
+</head>
+<body>
+	<h1>manipulating_arrays_js.html</h1>
+	<script>
+	// wrap it in function
+	(function(){
+
+		// Create an array holding the names of the planets of our solar system (in order, starting closest to the sun).
+		var planets = ["Mercury" , "Venus" , "Earth" , "Mars" , "Jupitor" , "Saturn" , "Uranus" , "Neptune"];
+
+		// function for logging the planets array
+		function logPlanets() {
+		    console.log('Here is the list of planets:');
+		    console.log(planets);
+		}
+
+		// Add sun
+		console.log('Adding "The Sun" to the beginning of the planets array.');
+		// todo: Do what the log statement above says you will do.
+		logPlanets(planets.unshift("Sun"));
+
+
+		// Add pluto to end
+		console.log('Adding "Pluto" to the end of the planets array.');
+		// todo: Do what the log statement above says you will do.
+		logPlanets(planets.push("Pluto"));
+
+
+		// remove sun from beginning
+		console.log('Removing "The Sun" from the beginning of the planets array.');
+		// todo: Do what the log statement above says you will do.
+		logPlanets(planets.shift("Sun"));
+
+
+		// remove pluto from end
+		console.log('Removing "Pluto" from the end of the planets array.');
+		// todo: Do what the log statement above says you will do.
+		logPlanets(planets.pop("Pluto"));
+
+
+		// find Earth, show index
+		console.log('Finding and logging the index of "Earth" in the planets array.');
+		// todo: Do what the log statement above says you will do.
+		console.log("The index of Earth is " + planets.indexOf("Earth"))
+
+
+		// remove planet after Earth (use splice)
+		console.log('Using splice to remove the planet after Earth.');
+		// todo: Do what the log statement above says you will do.
+
+		// store planet after earth (for later)
+		var afterEarth = planets.indexOf("Earth" + 1)
+		// remove planet after earth
+		logPlanets(planets.splice(planets.indexOf("Earth" + 1)))
+
+
+		// add back the planet you removed (use splice/place it after earth)
+		console.log('Using splice to add back the planet after Earth.');
+		// todo: Do what the log statement above says you will do.
+		logPlanets(planets.splice(planets.indexOf("Earth" + 1), planets.indexOf("Earth"), afterEarth));
+
+
+		// use .reverse() to reverse order of planets
+		console.log('Reversing the order of the planets array.');
+		// todo: Do what the log statement above says you will do.
+		logPlanets(planets.reverse());
+
+
+		// sort the array (this puts it in alphabetical order)
+		console.log('Sorting the planets array.');
+		// todo: Do what the log statement above says you will do.
+		logPlanets(planets.sort());
+
+})
+// start the show
+();
+	</script>
+
+
+</body>
+</html>
