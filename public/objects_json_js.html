@@ -1,0 +1,71 @@
+<!-- objects_json_js.html -->
+<html>
+<head>
+	<title>objects_json_js.html</title>
+</head>
+<body>
+	<center><h1>objects_json_js.html</h1></center>
+	<script>
+
+		// Create an array of objects that represent books.
+		var books = [
+				{ 
+					"title" : "Rich Dad, Poor Dad",
+					// "pages" : 208,
+					"Author": {
+						"firstName" : "Robert",
+						"lastName" : "Kiyosak",
+					}
+				},
+				{
+					"title" : "How to Win Friends and Influence People",
+					"Author": {
+						"firstName" : "Dale",
+						"lastName" : "Carnegie",
+					}
+				},
+				{
+				 	"title" : "Awaken The Giant Within",
+					"Author": {
+						"firstName" : "Tony",
+						"lastName" : "Robbins",
+					}	
+				},
+				{
+					"title" : "The One Thing",
+					"Author": {
+						"firstName" : "Gary",
+						"lastName" : "Keller",
+					}
+				},
+				{
+					"title" : "Jab, Jab, Jab, Right Hook",
+					"Author": {
+						"firstName" : "Gary",
+						"lastName" : "Vaynerchuk",
+					}
+				},
+		]
+
+
+		console.log(books);
+
+		// todo:
+		// Loop through the array of books using .forEach and print out the specified information about each one.
+		// start loop here
+
+
+		// belive it or not, you're not inside 
+		books.forEach(function(book,index,array){
+		    console.log("Book # " + index);
+		    console.log("Title: " + book.title);
+		    console.log("Author: " + book.Author.firstName + " " + book.Author.lastName);
+		    // console.log("Pages: " + book.pages);
+		    console.log("---");
+		// end loop here
+	})
+
+	</script>
+
+</body>
+</html>
