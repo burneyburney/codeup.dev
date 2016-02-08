@@ -6,15 +6,14 @@
 <body>
 	<center><h1>objects_json_js.html</h1></center>
 	<script>
-
 		// Create an array of objects that represent books.
 		var books = [
-				{ 
-					"title" : "Rich Dad, Poor Dad",
+		{ 
+			"title" : "Rich Dad, Poor Dad",
 					// "pages" : 208,
 					"Author": {
 						"firstName" : "Robert",
-						"lastName" : "Kiyosak",
+						"lastName" : "Kiyosaki",
 					}
 				},
 				{
@@ -25,7 +24,7 @@
 					}
 				},
 				{
-				 	"title" : "Awaken The Giant Within",
+					"title" : "Awaken The Giant Within",
 					"Author": {
 						"firstName" : "Tony",
 						"lastName" : "Robbins",
@@ -45,27 +44,38 @@
 						"lastName" : "Vaynerchuk",
 					}
 				},
-		]
-
+				]
 
 		console.log(books);
 
-		// todo:
-		// Loop through the array of books using .forEach and print out the specified information about each one.
-		// start loop here
-
-
-		// belive it or not, you're not inside 
+		// this displays the books and its content 1 at a time
 		books.forEach(function(book,index,array){
-		    console.log("Book # " + index);
-		    console.log("Title: " + book.title);
-		    console.log("Author: " + book.Author.firstName + " " + book.Author.lastName);
-		    // console.log("Pages: " + book.pages);
-		    console.log("---");
-		// end loop here
-	})
+			console.log("Book # " + (index +1));
+			console.log("Title: " + book.title);
+			console.log("Author: " + book.Author.firstName + " " + book.Author.lastName);
+			console.log("---");
+			// end loop here
+		})
 
-	</script>
 
-</body>
-</html>
+/////////////////////////////////////////// new assignment //////////////////////////////////////////////////////////////////
+
+
+		// crate empty array, that im going to fill
+		var arrayOfStrings = [];
+
+		// this is the loop to fill the array 
+		books.forEach(function(book,index,array){
+			arrayOfStrings.push(book.title + " was written by " + book.Author.firstName + " " + book.Author.lastName);
+		})
+
+
+		 // this for loop will display the strings LINE BY LINE (1 at a time)
+		 for(i=0;i < arrayOfStrings.length; i++){
+		 	console.log(arrayOfStrings[i]);
+		 }
+
+		 </script>
+
+		</body>
+		</html>
