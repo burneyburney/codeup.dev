@@ -35,15 +35,11 @@
         // cancel the interval/timeout for updateTimer()
         function defuseTheBOM()
         {
+            clearInterval(intervalID)
             // function updateTimer(){
-            if (detonationTimer > 1){
-                var detonationTimer = 5
-            } else{
-                console.log("wtf did you try to do1?")
-            }
-                // clearInterval(intervalID);            }
-                // var detonationTimer = 0;
-                // return detonationTimer;
+            // clearInterval(intervalID);            }
+            // var detonationTimer = 0;
+            // return detonationTimer;
             // timeoutID = setTimeout(function()
             // function updateTimer(5,5);
             console.log("you pressed the button");
