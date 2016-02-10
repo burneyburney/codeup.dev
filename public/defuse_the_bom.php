@@ -11,7 +11,7 @@
     <script>
     // console.log ("in JS")
         var detonationTimer = 5;
-        // interval
+        var intervalId;
         var interval = 1000;
 
         // TODO: This function needs to be called once every second
@@ -19,8 +19,8 @@
         {
             if (detonationTimer == 0) {
                 alert('EXTERMINATE!');
-                document.body.innerHTML = '';
-                // clearInterval(intervalID);
+                document.body.innerHTML = 'be quiet';
+                clearInterval(intervalId);
             } else if (detonationTimer > 0) {
                 document.getElementById('timer').innerHTML = detonationTimer;
             }
@@ -35,7 +35,9 @@
         // cancel the interval/timeout for updateTimer()
         function defuseTheBOM()
         {
-            clearInterval(intervalID)
+            // alert("good job")
+            clearInterval(intervalId);
+            // clearInterval(intervalID)
             // function updateTimer(){
             // clearInterval(intervalID);            }
             // var detonationTimer = 0;
@@ -44,7 +46,7 @@
             // function updateTimer(5,5);
             console.log("you pressed the button");
         }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////ignore that stuff////////////////////////////////////////////////////////////////
         // Don't modify anything below this line!
         //
         // This causes the defuseTheBOM() function to be called

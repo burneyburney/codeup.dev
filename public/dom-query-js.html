@@ -5,10 +5,23 @@
     <title>DOM: Query and Modify</title>
 </head>
 <body>
+
+
+    <!-- buttons -->
+    <button class="button" id="button1" data-btn="1">Button 1!</button>
+    <button class="button" id="button2" data-btn="2">Button 2!</button>
+    <button class="button" id="button3" data-btn="3">Button 3!</button>
+    <button class="button" id="button4" data-btn="4">Button 4!</button>
+    <button class="button" id="button5" data-btn="5">Button 5!</button>
+
+
     <h1 id="main-header">Hello World!</h1>
     <ul>
-        <l ata-dbid="4">Item 4</li>
-        <li class="odd" data-dbid="5">Item 5</li>
+        <li data-dbid="1">Item 1</li>
+        <li data-dbid="2">Item 2</li>
+        <li data-dbid="3">Item 3</li>
+        <li data-dbid="4">Item 4</li>
+        <li data-dbid="5">Item 5</li>
     </ul>
     <h2 id="sub-header">Hello Again.</h2>
     <p class="sub-paragraph">
@@ -24,34 +37,86 @@
     <script>
         "use strict";
         (function() {
-            // TODO: Uncomment next line and get the main header element by id
+            // TODO: Uncomment next line and get the main header element by id ///////////////////////////////////////////
             var mainHeader = document.getElementById("main-header");
 
-            // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-            mainHeader.innerHTML="JavaScript is Cool";
+            // TODO: Set inner html of mainHeader to "JavaScript is Cool" 
+            var button1 = document.getElementById("button1");
+            button1.addEventListener('click', changeB1, false);
 
-            // TODO: Uncomment the next line and get the sub header element by id
+            function changeB1(){
+                mainHeader.innerHTML="JavaScript is Cool";                
+            }
+     
+            function listener(event){
+                console.log(this);
+                console.log(event.target);
+            }
+
+
+
+
+
+            // TODO: Uncomment the next line and get the sub header element by id ///////////////////////////////////////////
             var subHeader = document.getElementById("sub-header");
 
-            // TODO: Set the text color of subHeader to blue
-            subHeader.style.color="blue";
+            // TODO: Set the text color of subHeader to blue 
+            var button2 = document.getElementById("button2");
+            button2.addEventListener("click", changeB2, false); 
 
-            // TODO: Uncomment the next line and get all list items
+            function changeB2(){
+               subHeader.style.color="blue";
+            }
+
+
+
+
+            // TODO: Uncomment the next line and get all list items  ///////////////////////////////////////////
             var listItems = document.getElementsByTagName("li");
 
-            // TODO: Set text color on every other list item to grey
-            
-            // TODO: Set text color of li with dbid = 1 to blue
+            // TODO: Set text color on every other list item to grey 
+            var button3 = document.getElementById("button3");
+            button3.addEventListener("click", changeB3, false);
+
+            function changeB3(){
+                for(var i = 0; i <= listItems.length; i+=2){
+                        listItems[i].style.color="grey";
+
+                }
+            }
+
+                  // TODO: Set text color of li with dbid = 1 to blue
+                 for(var i = 0; i <=listItems.length;i++) {
+                            if(listItems[i].getAttribute("data-dbid") == "1"){
+                                listItems[i].style.color="blue";
+                           }                   
+                 }
+
 
             // TODO: Uncomment the next line and get all elements with class name sub-paragraph
             var subParagraphs = document.getElementsByClassName("sub-paragraph");
 
             // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
             subParagraphs.innerText="Mission Accomplished!";
+
+
+
+
         })();
 
 
             ////////////////// graveyard ////////////////////////////////
+            // if(listItems[i].getAttribute("data-dbid") == "1"){
+            //     listItems[i].style.color="blue";
+            // }
+            // this is a handler
+            // var listener = function(event){
+            //      // alert("you clicked the button!");
+            //      console.log(event.target);
+            //  }
+            // target.addEventListener.("click",listener)
+            // target.addEventListener("click", listener)
+            // target.addEventListener(type,listener)
             // listItems.
             // listItems.style.color="#444";
             // listItems.document.getElementsByClassName("odd").style.color="grey";
