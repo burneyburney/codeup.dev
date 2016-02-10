@@ -1,164 +1,61 @@
-<!-- js_calculator.html -->
-<!-- michael burney -->
-<!--  -->
-
+<!-- this is a calculator -->
+<!-- started on Feb 9th/ completed Feb 10th -->
 <html>
 <head>
-	<title>js_calculator</title>
+	<title>calculator_js.html</title>
+	<!-- External CSS -->
+  	<link rel="stylesheet" href="/css/calc.css"/>
 </head>
 <body>
-	<center>
-	<h1>js_calculator</h1>
-	
-	<input type="text" id="LtxtField" name="numbers">
-	<input type="text" id="MtxtField" name="numbers">
-	<input type="text" id="RtxtField" name="numbers">
-	<br>
-	<button id="clear1"		input type="" value="">			c</button>
-	<button id="clear2"		input type="" value="">			c</button>
-	<button id="equal"		input type="" value="equal"> 	=</button>
-	<button id="divide"		input type="" value="/">	/</button><br>
+	<center><h1>calculator_js.html</h1>
 
-	<button id="btn9"		input type="number" value="9">	9</button>
-	<button id="btn8" 		input type="number" value="8">	8</button>
-	<button id="btn7" 		input type="number" value="7">	7</button>
-	<button id="multiply" 	input type="" value="*">		*</button><br>
+		<!-- 3 text fields, each of them have ID's -->
+		<input type="text" class="Field" id="LtxtField" name="numbers">
+		<input type="text" class="Field" id="MtxtField" name="numbers" size="2">
+		<input type="text" class="Field" id="RtxtField" name="numbers">
 
-	<button id="btn6"		input type="number" value="6">	6</button>
-	<button id="btn5"		input type="number" value="5">	5</button>
-	<button id="btn4" 		input type="number" value="4">	4</button>
-	<button id="subtract" 	input type="" value="-">		-</button><br>
+		<br>
+		<!-- these are the buttons, they have ID's -->
+		<button class = "button" id="clear1"		input type="" value="">			c</button>
+		<button class = "button" id="clear2"		input type="" value="">			c</button>
+		<button class = "button" id="decimal" 	input type="" value=".">		.</button>		
 
-	<button id="btn3" 		input type="number" value="3">	3</button>
-	<button id="btn2" 		input type="number" value="2">	2</button>
-	<button id="btn1" 		input type="number" value="1">	1</button>
-	<button id="add" 		input type="" value="+">		+</button>
+		<button class = "button" id="divide"		input type="" value="/">		/</button>
 
-	<script>
-		"use strict";
+		<br>
 
-		/////////// inputField = that text box   ////////////
-		var LinputField = document.getElementById("LtxtField");
-		var MinputField = document.getElementById("MtxtField");
-		var RinputField = document.getElementById("RtxtField");
-		//////////////////////////////////////////////////
+		<button class = "button" id="btn9"		input type="number" value="9">	9</button>
+		<button class = "button" id="btn8" 		input type="number" value="8">	8</button>
+		<button class = "button" id="btn7" 		input type="number" value="7">	7</button>
+		<button class = "button" id="multiply" 	input type="" value="*">		*</button>
+ 
+		<br>
 
-		// button 1 check
-		var btn1 = document.getElementById("btn1");
-		btn1.addEventListener("click", ibtn1, false)
-		function ibtn1(){
-			LinputField.value += "1";
-		};
+		<button class = "button" id="btn6"		input type="number" value="6">	6</button>
+		<button class = "button" id="btn5"		input type="number" value="5">	5</button>
+		<button class = "button" id="btn4" 		input type="number" value="4">	4</button>
+		<button class = "button" id="subtract" 	input type="" value="-">		-</button>
 
-		// button 2 check
-		var btn2 = document.getElementById("btn2");
-		btn2.addEventListener("click", ibtn2, false)
-		function ibtn2(){
-			LinputField.value +="2";	
-		};
+		<br>
 
-		// button 3 check
-		var btn3 = document.getElementById("btn3");
-		btn3.addEventListener("click", ibtn3, false)
-		function ibtn3(){
-			LinputField.value += "3";
-		};	
+		<button class = "button" id="btn3" 		input type="number" value="3">	3</button>
+		<button class = "button" id="btn2" 		input type="number" value="2">	2</button>
+		<button class = "button" id="btn1" 		input type="number" value="1">	1</button>
+		<button class = "button" id="add" 		input type="" value="+">		+</button>		
 
-		// button 4 check
-		var btn4 = document.getElementById("btn4");
-		btn4.addEventListener("click", ibtn4, false)
-		function ibtn4(){
-			LinputField.value += "4";	
-		};			
+		<br>
 
-		// button 5 check
-		var btn5 = document.getElementById("btn5");
-		btn5.addEventListener("click", ibtn5, false)
-		function ibtn5(){
-			LinputField.value += "5";	
-		};
+		<button class = "button" id="equal"		input type="" value=""> 		=</button>
 
-		// button 6 check
-		var btn6 = document.getElementById("btn6");
-		btn6.addEventListener("click", ibtn6, false)
-		function ibtn6(){
-			LinputField.value += "6";	
-		};	
-
-		// button 7 check
-		var btn7 = document.getElementById("btn7");
-		btn7.addEventListener("click", ibtn7, false)
-		function ibtn7(){
-			LinputField.value += "7";	
-		};	
-
-		//button 8 check
-		var btn8 = document.getElementById("btn8");
-		btn8.addEventListener("click", ibtn8, false)
-		function ibtn8(){
-			LinputField.value += "8";	
-		};	
-
-		// button 9 check
-		var btn9 = document.getElementById("btn9");
-		btn9.addEventListener("click", ibtn9, false)
-		function ibtn9(){
-			LinputField.value += "9";	
-		};
-
-		// make clear 1 work
-		var clear1 = document.getElementById("clear1");
-		clear1.addEventListener("click", iclear1, false)
-		function iclear1(){
-			inputField.value = "";
-		};		
-
-		// make clear 2 work
-		var clear2 = document.getElementById("clear2");
-		clear2.addEventListener("click", iclear2, false)
-		function iclear2(){
-			inputField.value = "";	
-		};
-
-		// make equal work
-		var equal = document.getElementById("equal");
-		equal.addEventListener("click", iequal, false)
-		function iequal(){
-			console.log("equal was pressed");
-		};
-
-		// make divide work
-		var divide = document.getElementById("divide");
-		divide.addEventListener("click", idivide, false)
-		function idivide(){
-			MinputField.value = "/";	
-		};
-
-		// multiply
-		var multiply = document.getElementById("multiply");
-		multiply.addEventListener("click", imultiply, false)
-		function imultiply(){
-			MinputField.value = "*";	
-		};
-
-		// 'subtract'
-		var subtract = document.getElementById("subtract");
-		subtract.addEventListener("click", isubtract, false)
-		function isubtract(){
-			MinputField.value = "-";	
-		};
-
-		// add
-		var add = document.getElementById("add");
-		add.addEventListener("click", iadd, false)
-		function iadd(){
-			MinputField.value = "+";	
-		};
+		<br>
 
 
+		<!-- do a text area at the bottom of the page THAT HOLDS TOTAL	 -->
+		<input type="text" class="Field" id="BtxtField" name="numbers">
 
+		<!-- external JS -->
+	  	<script src="/js/calc.js"></script>
 
-	</script>
-
+	</center>
 </body>
 </html>

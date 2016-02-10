@@ -1,0 +1,20 @@
+/*CSS for calculator*/
+body{
+	background-color: peachpuff;
+}
+.Field{
+	background-color: whitesmoke;
+	border-color: black;
+	margin-bottom: 1rem;
+	margin-top: 1rem;
+}
+.button{
+	background-size: 1rem;
+	width: 2rem;
+	background-color: whitesmoke;
+	margin: .4rem;
+	margin-top: .08rem;
+	margin-bottom: .5rem;
+	border-color: black;
+
+}
