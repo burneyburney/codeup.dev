@@ -107,16 +107,12 @@
 		 activeWindow = document.getElementById("RtxtField");
 		} 	
 	};
-	// clear button 1a
-	var clear1 = document.getElementById("clear1");
-	clear1.addEventListener("click", iclear1, false)
-	function iclear1(){
-		LtxtField.value = "";
-		MtxtField.value = "";
-		RtxtField.value = "";
-		BtxtField.value = "";
-		activeWindow = document.getElementById("LtxtField");
-	};	
+	// zero
+	var btn0 = document.getElementById("btn0");
+	btn0.addEventListener("click", izero, false)
+	function izero(){
+		activeWindow.value += "0";
+	};
 	// clear button 2
 	var clear2 = document.getElementById("clear2");
 	clear2.addEventListener("click", iclear2, false)
