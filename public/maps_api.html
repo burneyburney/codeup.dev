@@ -1,0 +1,76 @@
+<!-- google maps API
+	Michael Burney
+	  -->
+<html>
+<head>
+
+	<title>maps_api.html</title>
+	<style type="text/css">
+	body{
+		background-color: mintcream;
+	}
+		#map-canvas {
+			width: 90%;
+			height: 90%;
+			background-color: grey;
+			margin-top: 2.393rem;
+			border-color:black;
+			border: 50px;
+		}
+	</style>
+
+</head>
+<body>
+	<center>
+	<!-- need in order to display MAP -->
+    <div id="map-canvas"></div>
+    	<!-- This is when you put in key -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBby8Bl1o6B7H-l_ymCw3xZ912DJbtY4Ss"></script>
+
+		<script>
+
+			// variable called options (does what is says)
+			var mapOptions = {
+
+			    // Set the zoom level
+			    zoom: 7,
+
+			    // This sets the center of the map at our location
+			    center: {
+			        lat:  -100.9991,
+			        lng: -89.4400
+			    }
+			};
+
+			// render map
+    		var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+    		// variable of LAT and LNG that you want to place marker at
+    		var codeup = {lat:29.426781, lng:-98.489710 };
+    		// places marker
+    		var marker = new google.maps.Marker({
+    			position: codeup,
+    			map: map
+    		});
+
+    		var home = {lat:32.436153, lng:-93.800847 };
+    		var marker2 = new google.maps.Marker({
+    			position: home,
+    			map: map
+    		});
+    		var homeInfo = new google.maps.InfoWindow({
+    			content:"I dont live here"
+    		});
+
+    		var codeupInfo = new google.maps.InfoWindow({
+    			content:"I go here"
+    			});
+
+    		codeupInfo.open(map, marker);
+    		homeInfo.open(map, marker2);
+
+
+	</script>
+
+</body>
+</html>
