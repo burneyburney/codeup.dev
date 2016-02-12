@@ -1,17 +1,65 @@
 <html>
 <head>
-	<title>jQuery</title>
+	<title>jquery_exercises.html</title>
 </head>
 <body>
+
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+	<center><h1>jquery_exercises.html</h1>
+
+		<div class = "codeup">
+			<p>
+				there is stuff in this paragraph that i dont want to talk about.
+			</p>
+		</div>
+		<div class="codeup">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+			<div id="firstLorem">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div>
+		</div>
+
+		<div class="codeup">
+			<p>
+				Lorem ipsum and some other stuff that doesn't make sense
+			</p>
+		</div>
+	<div class = "list">
+		<ul>
+
+			<li>LIST TIME</li>
+			<li>OMG A LIST</li>
+			<li>wait... IS THAT A LIST!?</li>
+
+		</ul>
+	</div>
+
 	<script>
-		// window.onload = function(){
-		// 		alert("The page has finished loading!")
-		// }
-		$(document).ready(function(){
+			// when page is done loading (alert with this)
+			$(document).ready(function(){
 				alert("the page has finished loading!")
 		})
-	</script>
+			// alert the contents of firstLorem Paragraph
+			alert($("#firstLorem").html());
 
+			// CSS in JQuery that adds BORDER and 1pxRED
+			$(".codeup").css("border", "1px solid red")
+
+
+	</script>
 </body>
 </html>
