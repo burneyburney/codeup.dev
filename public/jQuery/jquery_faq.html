@@ -1,0 +1,58 @@
+<html>
+<head>
+	<title>jquery_faq.html</title>
+		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		<style>
+			.invisible{
+			display: none;
+			}
+	</style>
+</head>
+	
+<body>
+	<h1>jquery_faq.html</h1>
+	<p>
+	 Click the Question to recieve the Answer
+	</p>
+	<dl>
+			<dt>1. How do I select an item using class or ID?</dt>
+				<dd class = "invisible">This code selects an element with an ID of "myDivId". Since IDs are unique, this expression always selects either zero or one elements depending upon whether or not an element with the specified ID exist</dd>
+
+			<dt>2. How do I select elements when I already have a DOM element?</dt>
+				<dd class = "invisible">If you have a variable containing a DOM element, and want to select elements related to that DOM element, simply wrap it in a jQuery object.</dd>
+
+			<dt>3. How do I test whether an element has a particular class?</dt>
+				<dd class = "invisible">.hasClass() (added in version 1.2) handles this common use case:</dd>
+
+			<dt>4. How do I test whether an element exists?</dt>				  
+				<dd class = "invisible">Use the .length property of the jQuery collection returned by your selector:</dd> 
+
+			<dt>5. How do I determine the state of a toggled element?</dt>
+				<dd class = "invisible">You can determine whether an element is collapsed or not by using the :visible and :hidden selectors.</dd>
+
+			<dt>6. How do I select an element by an ID that has characters used in CSS notation?</dt>
+				<dd class = "invisible">In order to tell jQuery to treat these characters literally rather than as CSS notation, they must be "escaped" by placing two backslashes in front of them.</dd>
+
+			<dt>7. How do I disable/enable a form element?</dt>
+				<dd class = "invisible">You can enable or disable a form element using the .prop() method:</dd>
+
+			<dt>8. How do I check/uncheck a checkbox input or radio button?</dt>
+				<dd class = "invisible">You can check or uncheck a checkbox element or a radio button using the .prop() method:</dd>
+
+			<dt>9. How do I get the text value of a selected option?</dt>
+				<dd class = "invisible">Select elements typically have two values that you want to access. First there's the value to be sent to the server, which is easy:</dd>
+
+			<dt>10. How do I replace text from the 3rd element of a list of 10 items?</dt>
+				<dd class = "invisible">Either the :eq() selector or the .eq() method will allow you to select the proper item. However, to replace the text, you must get the value before you set it:</dd>
+	</dl>
+	<script>
+	$('dt').click(function() {
+		$("dd").toggleClass("invisible");
+	});
+
+	
+
+	</script>
+
+</body>
+</html>

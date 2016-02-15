@@ -1,0 +1,59 @@
+<!-- michael burney -->
+<!-- konami code -->
+<!-- using jQuery -->
+
+
+<html>
+<head>
+	<title>konami.html</title>
+	<!-- insert jQuery -->
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+	<h1>konami.html</h1>
+
+	<b>to trigger: </b><br>
+
+		up up down down left right left right b a ENTER 
+
+		<br>
+		<br>
+	
+	<script>
+		// konamiCode
+		var code = [38,38,40,40,37,39,37,39,66,65,13];
+
+		// variable to incriment through
+		var currentIndex = 0;
+
+		// on keyup RUN FUNCTION
+		$(document).keyup(function(event){
+
+			// log currentKey is going to be logged
+			var currentKey = event.keyCode;
+			console.log(currentKey);
+
+			// if the currentKey is EQUAL TO the code[index], increment curentINDEX
+			if (currentKey == code[currentIndex]) {
+				currentIndex++
+
+			// if they aren't equal then set currentIndex to 0
+			} else{
+				currentIndex = 0;
+			}
+
+			// if the length of codeARRAY is equal to the currentINDEX you win
+			// because that would mean they input'd all the correct digits
+			if (code.length == currentIndex) {
+				alert("you win");
+				currentIndex = 0
+			}
+		});
+
+</script>
+
+
+
+
+</body>
+</html>

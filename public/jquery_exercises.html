@@ -6,7 +6,7 @@
 
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
-	<center><h1>jquery_exercises.html</h1>
+	<h1>jquery_exercises.html</h1>
 
 		<div class = "codeup">
 			<p>
@@ -49,15 +49,52 @@
 	</div>
 
 	<script>
-			// when page is done loading (alert with this)
-			$(document).ready(function(){
-				alert("the page has finished loading!")
-		})
-			// alert the contents of firstLorem Paragraph
-			alert($("#firstLorem").html());
+	
+	
+		$("p").dblclick(function(){
+			$("p").css("font-size", "1.492rem")
+		});
 
-			// CSS in JQuery that adds BORDER and 1pxRED
-			$(".codeup").css("border", "1px solid red")
+
+		// change the background color of a h1 element when clicked
+		$("h1").click(function(){
+			$("h1").css("background-color", "peachpuff")
+		});
+
+		// Set all li text color to red when the mouse is hovering, reset to white when it is not.
+		 $("li").hover(
+                function() {
+                    $(this).css('background-color', 'red');
+                },
+                function() {
+                    $(this).css('background-color', '#FFF');
+                }
+                );
+
+		 
+
+			
+		var code = [38,38,40,40,37,39,37,39,66,65,13];
+		var keyCode = [];
+
+		// push into keyCode[]
+		$(document).keyup(function(event){
+	            keyCode.push(event.keyCode);
+	           console.log(keyCode);
+	           if (event.keyCode == 13){
+	           	right();
+	           }
+	        });
+
+
+		// function to alert Konami Code 
+		function right(){
+			if (keyCode.join("") == code.join("")){
+				alert("u did it!");
+			}
+		}
+
+
 
 
 	</script>

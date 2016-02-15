@@ -119,7 +119,7 @@
 	function iclear2(){
 		LtxtField.value = "";
 		MtxtField.value = "";
-		RtxtField.value = "";v
+		RtxtField.value = "";
 		BtxtField.value = "";
 		activeWindow = document.getElementById("LtxtField");			
 	};		
@@ -129,7 +129,7 @@
 	function idecimal(){
 		activeWindow.value += ".";
 	};	
-    va
+    
 
 	// = sign pressed RUN FUNCTION (that does equation  based on if + or * was pressed) 
 	var equal = document.getElementById("equal");
