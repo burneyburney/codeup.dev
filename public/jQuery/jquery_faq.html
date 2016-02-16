@@ -4,7 +4,7 @@
 		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 		<style>
 			.invisible{
-			display: none;
+			display: block;
 			}
 	</style>
 </head>
@@ -45,12 +45,75 @@
 			<dt>10. How do I replace text from the 3rd element of a list of 10 items?</dt>
 				<dd class = "invisible">Either the :eq() selector or the .eq() method will allow you to select the proper item. However, to replace the text, you must get the value before you set it:</dd>
 	</dl>
+
+	<h1>List of National Parks</h1>
+	<!-- 3 unordereded lists | NAME in h3 | at least 4 facts  -->
+	<h3> Acadia </h3>
+	<ul>
+		<li>Oldest American National Park east of the Mississippi River</li>
+		<li>No hotels or motels within the limits of the park</li>
+		<li>The annual snowfall in Acadia National Park is 60 inches.</li>
+		<li>More than 120 miles of hiking trails</li>
+	</ul>
+
+	<h3> Denali </h3>
+	<ul>
+		<li>Denali National Park is the site of the highest peak on the continent of North America</li>
+		<li>Denali means "The High One" in language of the Athabascan tribe</li>
+		<li>Those looking for more strenuous exercise sholid hit the Mount Healy Overlook trail.</li>
+		<li>You are likely to see grizzly bears, caribou and moose</li>
+	</ul>
+
+	<h3> Sequoia </h3>
+	<ul>
+		<li>Every year, more than 1.6 million people visit the park</li>
+		<li>There are 275 caves that have been discovered</li>
+		<li>The sequoias (trees) here grow in a perfectly vertical line</li>
+		<li>One of the more popliar Sequoia National Park tours includes a journey called Trail of 100 Giants</li>
+	</ul>
+
 	<script>
+	// togle for top of screen
 	$('dt').click(function() {
-		$("dd").toggleClass("invisible");
+		$("dd").toggle("invisible");
 	});
 
-	
+///////////////////////////////////////////////////////
+
+	// national parks, first ul in each section is bold
+	var uls = $("ul");
+	uls.each(function(){
+		// EACH ul, CHILD, FIRST ONE, CSS input
+		$(this).children().first().css("font-weight", "bold");
+	});
+
+
+
+	// bottom part, click h3 to hide contents below
+	$("h3").click(function(){
+		// this next()function takes whats beneath it and runs (thisFUnCTION or w/e) against it
+		$(this).next().slideToggle();
+	});
+
+
+
+	/////////////////////////////graveyard//////////////////////////
+	// // if li clicked, insiable the parent 
+	// $("li").click(function(){
+	// 	$("ul").children().css("display", "none");
+
+	// })
+	// var ils = $("li");
+	// ils.each(function(){
+	// 	$(this).parent().hide();
+	// })
+	// first li element in each ul have font-weight: bold
+	// var first = ("li").first(){
+	// first.css("font-weight", "bold");
+	// 	}
+	// 	first();
+	// $("ul").children().css("font-weight", "bold");
+
 
 	</script>
 

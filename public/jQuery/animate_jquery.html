@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title> animate_jquery.html</title>
+	<style>
+		.myBox{
+			margin: 10px;
+			border: 10px;
+			font-weight: 30px;
+			background-color: peachpuff;
+
+		}
+	</style>
+		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+	<center>
+		<div class="myBox">
+			<p>
+				HHHHHHHH
+			</p>
+		</div>
+	</center>
+
+	<script>
+	$(document).ready(function(){
+	"use strict";
+
+		$(".myBox").click(function(){
+		$(this).animate({
+			"border": "+=230px",
+			"marginTop": "+=70px",
+		})
+
+	})
+})
+
+
+	</script>
+</body>
+</html>
