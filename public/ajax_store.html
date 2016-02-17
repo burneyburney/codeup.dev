@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Online Store</title>
+    <title>ajax_store.html</title>
+    <style>
+        td{
+            background-color: whitesmoke;
+        }
+        tr{
+            background-color: navajowhite;
+        }
+    </style>
 </head>
 <body>
-
+<center>
 <h1>My Tool Store</h1>
 
 <table id="products">
@@ -16,38 +24,47 @@
             <th>Categories</th>
         </tr>
     </thead>
-    <tbody id="insertProducts"></tbody>
+    <tbody id="insertProducts">
+    </tbody>
 </table>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 
 <script>
+"use strict";
 (function() {
+    console.log("insert stuff here");
     // TODO: Create an ajax GET request for /data/inventory.json
         $.get("/data/inventory.json",{
 
         }).done(function(data){
-            console.log(data)
-            for(var i = 0 ; i < data.length; i++){
-                var contentString = "";
+            console.log(data[0]);
+            var contentString = "";
 
-                $("contentString").append(data[i]);
+            data.forEach(function(tool,index,array){
 
-                $("#insertProducts").append(data[i]);
-                console.log(contentString);
-            };
+
+                contentString += "<tr>";
+                contentString += "<td>" + tool.title + "</td>";
+                contentString += "<td>" + tool.quantity + "</td>";
+                contentString += "<td>" + tool.price + "</td>";
+                contentString += "<td>" + tool.categories.join(" , ") + "</td>";
+                contentString += "</tr>";
+            
+            })
+                $("#insertProducts").html(contentString);
+
+
+        }).fail(function(data){
+
+        })
+        .always(function(){
+
         });
 
-    // TODO: Take the data from inventory.json and append it to the products table
-
-        // console.log(inventory.json);
-
-    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-    //             its contents and fields
-    //       HINT: You will want to target #insertProducts for your new HTML elements
 })();
 </script>
-
+</center>
 </body>
 </html>
