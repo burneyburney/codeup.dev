@@ -1,5 +1,6 @@
 <!-- Michael Burney -->
-<!--  animate box -->
+<!--  animated box -->
+<!-- using jQuery animate() -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,7 +39,7 @@
             background-color:lightgoldenrodyellow;
         }
         h1{
-            margin: 1px;
+            margin: 1px ;
         }
     </style>
 </head>
@@ -60,13 +61,13 @@
     <script>
     $(document).ready(function() {
         "use strict";
+        
         // TODO: "Move It" should move the box 100 pixels to the left
         $("#btn-move").click(function(){
             $("#animate-box").animate({
                 "marginLeft" : "-=100px"
             })
         })
-
 
         // TODO: "Scale It" should expand the box width by 50%
         $("#btn-scale").click(function(){
@@ -105,15 +106,6 @@
                 })
             })
         });
-
-
-        ////////////////////////graveyard////////////////////
-        //     // move right
-        //    $("#btn-right").click(function(){
-        //     $("#animate-box").animate({
-        //         "marginRight" : "-=100px"
-        //     })
-        // })
     </script>
 </body>
 </html>
