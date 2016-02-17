@@ -11,7 +11,6 @@
 				background-color: cornflowerblue;
 				position: relative;
 			}
-
 		</style>
 </head>
 <body>
@@ -40,7 +39,6 @@
                 contentString += "<td>" + post.content + "</td>";
                 contentString += "<td>" + post.categories.join(" ") + "</td>";
                 contentString += "</tr>";
-                contentString += "<tr>" + "<td>" + " " +  "</td>" + "</tr>";
 
 			})
 
@@ -48,12 +46,14 @@
 
 		})
 
+
+		$("td").click(function(){
+    $("#box").animate({"marginBottom": "-=50px"});
+});
+
 	})();
 
 	</script>
-<!-- Use ajax to load the contents of blog.json and add the data from it to your #posts div.
- -->
- <!-- Add additional entries to blog.json and make sure your changes are reflected on the page.
- -->
+
 </body>
 </html>

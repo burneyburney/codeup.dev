@@ -24,8 +24,7 @@
             <th>Categories</th>
         </tr>
     </thead>
-    <tbody id="insertProducts">
-    </tbody>
+    <tbody id="insertProducts"></tbody>
 </table>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -49,7 +48,7 @@
                 contentString += "<td>" + tool.title + "</td>";
                 contentString += "<td>" + tool.quantity + "</td>";
                 contentString += "<td>" + tool.price + "</td>";
-                contentString += "<td>" + tool.categories.join(" , ") + "</td>";
+                contentString += "<td>" + tool.categories.join(", ") + "</td>";
                 contentString += "</tr>";
             
             })
