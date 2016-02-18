@@ -1,0 +1,79 @@
+
+get w/ no parameters to script 
+    you get a list of all its items
+     array
+      
+
+ post request to just script, w/ no parameters
+  means i want to create a new item
+
+
+key is content
+
+{
+	"content": "speak up when ben prompts you to!"
+	"priority":0,
+
+}
+	now that this is created, what should i do?
+
+post modifies data
+get retrieves data
+=======================================================
+inject itmes in ul when we get them
+
+down in form, we are createing a new item
+
+var loadData = function(){
+	
+	$.ajax)
+}
+
+.ajax does GEt request by default
+
+.get instead of .ajax , b/c its a little bit more clear
+-------------------------------------------------------------
+$.get("/todo-json.php").done(function(items)
+	console.log(items);
+	);
+
+assign variable the value
+var content = $("#item-content").val();
+var priority = $("#item-priority").val();
+
+.done should clear your form/ fields
+--------------------------------------------------------------\
+$.post("/todo-json.php")
+.done(function(){
+	$("#new-item-form").get(0).reset();
+})
+
+.fail(function(jqXhr){
+	alert(jqXhr.responseJSON.msg);
+});
+.always(loadData);
+-------------------------------------------------
+functions are basically variables in javascript. 
+treat function like a variable and just loadData
+tell jQuery, to call this function alawyas line (53)
+--------------------------------------------------------------
+$("#item-list")
+
+itemlist .html("")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
