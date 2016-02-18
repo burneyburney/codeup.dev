@@ -9,18 +9,63 @@
 <head>
 	<title>weather_map.html</title>
 		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+		<style>
+			body{
+				background-color: cornflowerblue;
+			}
+
+		</style>
 </head>
 <body>
+	<h1>Weather Application</h1>
+
+	<div id="insertWeather"></div>
+
+
 	<script>
 	// this is the get request
 	$.get("http://api.openweathermap.org/data/2.5/weather", {
 		// input your API key
     	APPID: "e3f0930680e42f756ed3617cacd55b1c",
     	// specify where you want to look
-    	q:     "San Antonio, TX"
-	});.done(function(weather_data){
-		console.log(weather_data)
-	})
+    	q:     "San Antonio, TX",
+    	units: "imperial"
+
+	}).done(function(data){
+		console.log(data);
+
+		var contentString = "";
+
+	        contentString += "<tr>";
+ 	        contentString += "<td>" + "<h3>" + data.name + "</h3>" + "<br>" +
+
+
+	        				"</td>";
+
+	        contentString += "<td>" + "<br>" + parseInt(data.main.temp_max) + "/" + parseInt(data.main.temp_min) + "<br>" +
+
+
+	        				"</td>";
+
+	        contentString += "<td>" + " <br> " + data.clouds.all + "<br>" + 
+
+
+	        				 "</td>";
+	      	contentString += "<td>" + " <br> " + data.main.humidity + "<br>" + 
+
+
+	        				 "</td>";
+	        contentString += "</tr>";
+            
+           $("#insertWeather").html(contentString);
+         }).fail(function(data){
+            	console.log(data);
+         });
+
+
+
+	
 
 	</script>
 </body>

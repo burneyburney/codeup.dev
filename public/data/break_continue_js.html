@@ -1,0 +1,27 @@
+<!-- michael burney
+	 weather app
+	 openweathermap
+	 googlemaps
+	 Feb 17th 2016
+	 -->
+
+<html>
+<head>
+	<title>weather_map.html</title>
+		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+	<script>
+	// this is the get request
+	$.get("http://api.openweathermap.org/data/2.5/weather", {
+		// input your API key
+    	APPID: "e3f0930680e42f756ed3617cacd55b1c",
+    	// specify where you want to look
+    	q:     "San Antonio, TX"
+	}).done(function(weather_data){
+		console.log(weather_data)
+	})
+
+	</script>
+</body>
+</html>
