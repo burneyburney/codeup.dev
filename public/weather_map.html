@@ -7,60 +7,170 @@
 <html>
 <head>
 	<title>weather_map.html</title>
+		<!-- jquery -->
 		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-
+		<!-- google maps api key -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBatM58dnrFtglvezfx87WsVkU6rLNYS88"></script>
 		<style>
-			body{
-				background-color: cornflowerblue;
+			*{
+			    font-family: "Arial Black";
 			}
+			body{
+				background-color: lavender;
+			}
+			tr{		
+				background-color: ghostwhite;
+				text-align: center;
 
+			}
+			td{
+			border: solid black 3px;		
+			width: 126px;
+
+			margin-right: 3px;
+
+			}
+			th{
+				background-color: floralwhite;
+				border: solid black 3px;
+			}
+		   #map-canvas {
+            width: 809px;
+            height: 299px;
+            margin-top: 12px;
+            border: solid black 3px;
+    	    }
 		</style>
+
 </head>
 <body>
+	<center>
 	<h1>Weather Application</h1>
+	<!-- this is the table with the weather and info in it -->
+		<table id="weatherTable">
+			<thead>
+				<tr>
+					<th>Temperature </th>
+					<th>Image</th>
+					<th>Clouds</th>
+					<th>Humidity</th>
+					<th>Wind Speed</th>
+					<th>Pressure</th>
+				</tr>
+			</thead>
+		</table>
 
-	<div id="insertWeather"></div>
+
+	 Latitude: <input type="text" id="lat" value="">
+	 Longtitude: <input type="text" id="long" value="">
+	 <input id="submit" type="submit" value="Submit">
+
+	<!-- this is a map -->
+	<div id="map-canvas"> </div>
+
 
 	<script>
+
+		// variables to get time
+		var currentTime = new Date()
+		var hours = currentTime.getHours()
+		var minutes = currentTime.getMinutes()
+		var suffix = "AM";
+
+		if (minutes < 10){
+			minutes = "0" + minutes
+		} else if (hours >= 12) {
+			suffix = "PM";
+			hours = hours - 12;
+		} else if (hours == 0) {
+		hours = 12;
+		}
+		// display on screen
+		document.write("<b>" + hours + ":" + minutes + " " + suffix + "</b>")
+
 	// this is the get request
-	$.get("http://api.openweathermap.org/data/2.5/weather", {
+	$.get("http://api.openweathermap.org/data/2.5/forecast", {		
 		// input your API key
     	APPID: "e3f0930680e42f756ed3617cacd55b1c",
     	// specify where you want to look
     	q:     "San Antonio, TX",
+    	cnt: 3,
     	units: "imperial"
 
-	}).done(function(data){
-		console.log(data);
 
+	}).done(function(data){
+		// console.log(data);
 		var contentString = "";
 
-	        contentString += "<tr>";
- 	        contentString += "<td>" + "<h3>" + data.name + "</h3>" + "<br>" +
+		data.list.forEach(function(day,index,array){
+			// console.log(day);
+			contentString += day.name;
+			var wIcon = "http://openweathermap.org/img/w/" + day.weather[0].icon + ".png" ;
+			contentString += "<tr>"
+
+			contentString += "<td>" + "H:" + parseInt(day.main.temp_max) + "&deg" + " / " + "L:" + parseInt(day.main.temp_min) + "&deg" +"</td>";
+
+			contentString += "<td>" + "<img src='"		+ wIcon + "'>"  + "</td>";
+			contentString += "<td>" 			 		+ day.weather[0].description + "</td>";
+			contentString += "<td>" 					+ day.main.humidity + "%" + "</td>";
+			contentString += "<td>" 				  	+ day.wind.speed + "</td>";
+			contentString += "<td>" 					+ day.main.pressure + "</td>";
+			contentString += "</tr>";
+
+	})
+			$("#weatherTable").append(contentString);
+	
+
+ 	});
+
+	 	// this is a map
+	 	var mapOptions = {
+	            // Set the zoom level
+	            zoom: 10,
+
+	            // This sets the center of the map at our location
+	            center: {
+	                lat:  29.4284595,
+	                lng: -98.492433
+	             },        		
+       	};
 
 
-	        				"</td>";
+        // render the map
+        var map = new google.maps. Map(document.getElementById("map-canvas"), mapOptions);
 
-	        contentString += "<td>" + "<br>" + parseInt(data.main.temp_max) + "/" + parseInt(data.main.temp_min) + "<br>" +
+        var codeup = { lat: 29.428459, lng: -98.492433 };
+
+		// Add the marker to our existing map
+		var marker = new google.maps.Marker({
+		    position: codeup,
+		    map: map,
+		    draggable: true
+		});
 
 
-	        				"</td>";
 
-	        contentString += "<td>" + " <br> " + data.clouds.all + "<br>" + 
+		// google maps newLocation
+		// uses lat/lng
+		// my variables are called lat/long
+		$("#submit").click(function(newLocation){
+			var lat = parseFloat($("#lat").val());
+			var long = parseFloat($("#long").val());
+			var newLocation = {
+				lat: lat,
+				lng: long
+			}
 
+			map.setCenter(newLocation);
+			// marker = position: newLocation;
+		})
 
-	        				 "</td>";
-	      	contentString += "<td>" + " <br> " + data.main.humidity + "<br>" + 
+		$("#clSubmit").click(function(){
+			map.setCenter(cLocation);
 
-
-	        				 "</td>";
-	        contentString += "</tr>";
-            
-           $("#insertWeather").html(contentString);
-         }).fail(function(data){
-            	console.log(data);
-         });
+		})
 
 	</script>
+	</center>
 </body>
 </html>

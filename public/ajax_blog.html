@@ -17,7 +17,6 @@
 	
 	<h1>ajax_blog.html</h1>
 
-
 	<div id="posts">
 
 	</div>
@@ -29,7 +28,10 @@
 
 
 		}).done(function(data){
+			// testing
 			console.log(data[0]);
+
+			// emptry string to put things into
 			var contentString = "";
 
 			data.forEach(function(post,index,array){
@@ -45,13 +47,11 @@
 			$("#posts").html(contentString);
 
 		})
-
-
+		
 		$("td").click(function(){
     $("#box").animate({"marginBottom": "-=50px"});
-});
-
-	})();
+	});
+})();
 
 	</script>
 
