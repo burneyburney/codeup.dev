@@ -1,16 +1,19 @@
 <?php
 // ping.php
+function pageController(){
 
+    // isset (CHECKS if key is set) | GET request for counter`
 
-// hit link
-// if pressed (COUNTER++)
+    $counter = isset($_GET['counter'])?$_GET['counter']:0;
 
+    // return = lets you use variable you have in the controller as variables you have in the h1
+    return array(
+        'counter' => $counter
+    );
 
-
-// miss miss
-// if pressed (misses and GAME OVER)
-
-
+}
+// use it cuzz duhh
+extract(pageController());
 
 
 
@@ -21,28 +24,34 @@
     <meta charset="utf-8">
     <title>ping.php</title>
 
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/pingpong.css">
     <!-- jQuery -->
+    <!-- <script type="text/javascript" src="/fireworks.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+
     <!-- external JS -->
     <!-- <script src="/"></script> -->
 
 </head>
 <body>
     <h1>ping.php</h1>
+    <h1><?= $counter ?> </h1>
+
 
     <div class="hit">
-        <form method="GET" action="pong.php">
-            <button type="submit" class="button"> HIT THAT BALL!! </button>
+        <!-- <form method="GET" action="pong.php" href=counter.php?counter=<?= $counter +1 ?>
+            <button type="submit" class="button"> HIT THAT BALL!! </button> -->
+
+            <a href="pong.php?counter=<?= $counter +1 ?>">hit</a>
+
         </form>
     </div>
 
     <div class="miss">
-        <form method="GET" action="quit.php">
-            <button type="submit" class="button"> -swings but misses- </button>
-        </form>
+
+        <a href="ping.php?counter=<?= $counter =0 ?>">miss</a>
+
     </div>
-
-
 </body>
 </html>

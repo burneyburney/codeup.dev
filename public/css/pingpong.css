@@ -1,9 +1,16 @@
 .hit{
-
+    margin-top: 9px;
+    position: relative;
+    text-align: center;
 }
 .miss{
+    margin-top: 9px;
+    text-align: center;
 
 }
-.button{
-    background-color: ghostwhite;
+body{
+    background-color: peachpuff;
+}
+h1{
+    text-align: center;
 }
