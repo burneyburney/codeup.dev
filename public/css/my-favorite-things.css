@@ -1,8 +1,9 @@
 h4{
-    background-color: floralwhite;
+    background-color: ghostwhite;
     color:grey;
     text-align:center;
     border-radius: 14px;
     border-top: solid black 2px;
     border-right: solid black 2px;
+    font-family: Oswald, sans-serif;
 }
