@@ -5,13 +5,14 @@
 session_start();
 
 // declare variable
-$username = (isset($_SESSION['LOGGED_IN_USER']) || $_SESSION['LOGGED_IN_USER']  == "") {
-    header('Location: login.php ');
+$username = (isset($_SESSION)
+//  .................................
+
+// sending them to login instead of authorized
+if (!(isset($_SESSION['LOGGED_IN_USER']))) || $_SESSION['LOGGED_IN_USER']  == "") {
+    header('Location: login.php');
     die();
 }
-
-
-
 
 
 

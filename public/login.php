@@ -1,18 +1,36 @@
 <?php
-// login.php
- var_dump($_POST);
- $checkUser = isset($_POST['username']) ? ($_POST['username']) : '';
- $checkPass = isset($_POST['password']) ? ($_POST['password']) : '';
+// starts session or finds current session
+// allows us to use $_SESSION superglobal (NEED THIS!!!)
+session_start();
 
+// variables for login check
+$username = "guest";
+$password = "password";
+
+var_dump($_POST);
+
+// check $_POST superglobal for user input to check for login
+$checkUser = isset($_POST['username']) ? ($_POST['username']) : '';
+$checkPass = isset($_POST['password']) ? ($_POST['password']) : '';
+
+// checking if logged in and don't need to be here
 if($checkUser == 'guest' && $checkPass == 'password'){
+    $_SESSION['Logged_IN_USER'] = $username;
     // re-direct
     header("Location: authorized.php");
+
+    // session_id(logged_in_user);
+    // $session_Id = session_id();
+    // $sessionCheck = isset($_SESSION['$session_Id']) ? $_SESSION['$session_Id'] : 0;
+
     // script keeps going unless this is used.
     die();
+
+    // doing this to user if they entered correct credentials
+    // prevents message from showing when user submitted nothing / first itme loading
 }else if($checkUser != '' || $checkUser != ''){
     echo "Username or Password is incorrect";
 }
-
 
 
 ?>
