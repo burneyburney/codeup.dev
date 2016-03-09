@@ -1,9 +1,13 @@
 <?php
+
+// pong.php
+require_once 'functions.php';
+
 function pageController(){
 
     // isset (CHECKS if key is set) | GET request for counter`
 
-    $counter = isset($_GET['counter'])?$_GET['counter']:0;
+    $counter = inputHas('counter') ? inputGet('counter') : 0;
 
     // return = lets you use variable you have in the controller as variables you have in the h1
     return array(
@@ -13,8 +17,6 @@ function pageController(){
 }
 // use it cuzz duhh
 extract(pageController());
-
-
 
 ?>
 <!doctype html>

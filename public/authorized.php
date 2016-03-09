@@ -1,33 +1,27 @@
 <?php
-// authorized.php
-// starts session or finds current session
-// allows us to use $_SESSION superglobal (NEED THIS!!!)
-session_start();
+	// starts session or finds a session
+	// allows us to use $_SESSION superglobal
+	session_start();
 
-// declare variable
-$username = (isset($_SESSION)
-//  .................................
+	var_dump($_SESSION);
 
-// sending them to login instead of authorized
-if (!(isset($_SESSION['LOGGED_IN_USER']))) || $_SESSION['LOGGED_IN_USER']  == "") {
-    header('Location: login.php');
-    die();
-}
+	// variable to hold the user name if they were logged in
+	$username = ( isset($_SESSION['LOGGED_IN_USER']) ) ? $_SESSION['LOGGED_IN_USER'] : "";
 
-
-
+	// checking the session for the 'LOGGED_IN_USER' key and making sure it has a value
+	// doing this to find out if they are logged in
+	if (! isset($_SESSION['LOGGED_IN_USER']) || $_SESSION['LOGGED_IN_USER'] == "") {
+		header('Location: /login.php');
+		die();
+	}
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>authorized.php</title>
-
-
+	<title>Authorized</title>
 </head>
 <body>
-    <h1>authorized.php!</h1>
-    <a href="logout.php">logout.php</a>
-
+	<h1>Hello <?= $username; ?>!</h1>
+	<a href="/logout.php">Logout</a>
 </body>
 </html>
