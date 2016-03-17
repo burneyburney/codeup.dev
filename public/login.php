@@ -1,7 +1,7 @@
 <?php
 // require once for EVERYTHING, no commas;
 require_once 'functions.php';
-
+require_once 'Auth.php'
 	// starts session or finds a session
 	// allows us to use $_SESSION superglobal
 	session_start();
@@ -41,6 +41,14 @@ require_once 'functions.php';
 <html>
 <head>
 	<title>Login</title>
+	<style>
+		
+
+
+
+
+	</style>
+
 </head>
 <body>
 	<p><?= $message; ?></p>

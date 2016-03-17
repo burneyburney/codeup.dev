@@ -1,21 +1,19 @@
 <?php
 
 // pong.php
-require_once 'functions.php';
+// require_once 'functions.php';
+require_once '../Input.php';
+
 
 function pageController(){
-
     // isset (CHECKS if key is set) | GET request for counter`
-
-    $counter = inputHas('counter') ? inputGet('counter') : 0;
-
+    $counter = Input::get('counter', 0);
     // return = lets you use variable you have in the controller as variables you have in the h1
     return array(
         'counter' => $counter
     );
-
 }
-// use it cuzz duhh
+
 extract(pageController());
 
 ?>

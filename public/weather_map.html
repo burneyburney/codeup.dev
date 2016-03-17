@@ -16,15 +16,15 @@
 			    font-family: "Arial Black";
 			}
 			body{
-				background-color: lavender;
+				background-image: url("/symphony.png");
 			}
-			tr{		
+			tr{
 				background-color: ghostwhite;
 				text-align: center;
 
 			}
 			td{
-			border: solid black 3px;		
+			border: solid black 3px;
 			width: 126px;
 
 			margin-right: 3px;
@@ -41,7 +41,6 @@
             border: solid black 3px;
     	    }
 		</style>
-
 </head>
 <body>
 	<center>
@@ -60,15 +59,12 @@
 			</thead>
 		</table>
 
-
 	 Latitude: <input type="text" id="lat" value="">
 	 Longtitude: <input type="text" id="long" value="">
 	 <input id="submit" type="submit" value="Submit">
 
 	<!-- this is a map -->
 	<div id="map-canvas"> </div>
-
-
 	<script>
 
 		// variables to get time
@@ -89,14 +85,13 @@
 		document.write("<b>" + hours + ":" + minutes + " " + suffix + "</b>")
 
 	// this is the get request
-	$.get("http://api.openweathermap.org/data/2.5/forecast", {		
+	$.get("http://api.openweathermap.org/data/2.5/forecast", {
 		// input your API key
     	APPID: "e3f0930680e42f756ed3617cacd55b1c",
     	// specify where you want to look
     	q:     "San Antonio, TX",
     	cnt: 3,
     	units: "imperial"
-
 
 	}).done(function(data){
 		// console.log(data);
@@ -117,12 +112,9 @@
 			contentString += "<td>" 					+ day.main.pressure + "</td>";
 			contentString += "</tr>";
 
-	})
+		})
 			$("#weatherTable").append(contentString);
-	
-
  	});
-
 	 	// this is a map
 	 	var mapOptions = {
 	            // Set the zoom level
@@ -132,9 +124,8 @@
 	            center: {
 	                lat:  29.4284595,
 	                lng: -98.492433
-	             },        		
+	             },
        	};
-
 
         // render the map
         var map = new google.maps. Map(document.getElementById("map-canvas"), mapOptions);
@@ -148,8 +139,6 @@
 		    draggable: true
 		});
 
-
-
 		// google maps newLocation
 		// uses lat/lng
 		// my variables are called lat/long
@@ -162,14 +151,12 @@
 			}
 
 			map.setCenter(newLocation);
-			// marker = position: newLocation;
 		})
 
 		$("#clSubmit").click(function(){
 			map.setCenter(cLocation);
 
 		})
-
 	</script>
 	</center>
 </body>
