@@ -23,11 +23,12 @@ $query = 'CREATE TABLE national_parks (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(240) NOT NULL,
     `location` VARCHAR(50) NOT NULL,
-    `date_established`(date),
-    `area_in_acres`(double),
+    `date_established` date,
+    `area_in_acres` double,
     PRIMARY KEY (id)
 )';
 
+$dbc-> exec($query);
 //
 // park_migration has ran
 //
