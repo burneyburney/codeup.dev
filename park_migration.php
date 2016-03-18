@@ -1,9 +1,5 @@
-<!-- exec -->
- <!-- ansible command for new database MySQL
- run from vagrant-lamp folder O   N    L  Y
- ansible-playbook ansible/playbooks/vagrant/mysql/database.yml -->
+
 <?php
-// dont forget this shit VV
 define('DB_HOST', '127.0.0.1');
 define('DB_NAME', 'parks_db');
 define('DB_USER', 'parks_user');
@@ -32,4 +28,6 @@ $query = 'CREATE TABLE national_parks (
     PRIMARY KEY (id)
 )';
 
-// After the DROP TABLE command, add another exec() to create the table national_parks with the following fields:
+//
+// park_migration has ran
+//
