@@ -12,16 +12,17 @@ define('DB_NAME', 'parks_db');
 define('DB_USER', 'vagrant');
 define('DB_PASS', 'vagrant');
 
-
 require_once '../db_connect.php';
-
-
 
 
 $stmt=$dbc->query('SELECT * FROM national_parks');
 
-var_dump($stmt);
 
+
+
+
+$parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// var_dump($parks);
 
 
 
@@ -32,10 +33,23 @@ var_dump($stmt);
     <meta charset="utf-8">
     <title>national_parks.php</title>
 
-
 </head>
 <body>
     <h1> test </h1>
+    <?php foreach($parks as $park): ?>
+        <ul>
+            <h3> <?= $park['name'] . PHP_EOL  ?></h3>
+                <li><?= $park['location'] . PHP_EOL?> </li>
+                <li><?= $park['date_established'] . PHP_EOL  ?> </li>
+                <li><?= $park['area_in_acres'] . PHP_EOL ?> </li>
+                    <?= PHP_EOL . "\n" ?>
+        </ul>
+    <?php endforeach; ?>
 
 </body>
 </html>
+
+
+<ul>
+    <li> </li>
+</ul>
