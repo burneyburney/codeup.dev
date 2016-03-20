@@ -18,13 +18,8 @@ require_once '../db_connect.php';
 $stmt=$dbc->query('SELECT * FROM national_parks');
 
 
-
-
-
 $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // var_dump($parks);
-
-
 
 ?>
 <!doctype html>
