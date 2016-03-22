@@ -13,9 +13,17 @@ define('DB_USER', 'vagrant');
 define('DB_PASS', 'vagrant');
 
 require_once '../db_connect.php';
+// input is how we get our page numbers
+require_once '../Input.php';
 
+// this will give me OFFSET
+$limit = 4;
+$page = Input::get('page',1);
+$offset = ($page * $limit) - $limit;
 
-$stmt=$dbc->query('SELECT * FROM national_parks');
+// inside of this string is only SQL
+// double quotes b/c it is dynamic!!!
+$stmt=$dbc->query("SELECT * FROM national_parks LIMIT $limit OFFSET $offset");
 
 
 $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -30,7 +38,7 @@ $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 </head>
 <body>
-    <h1> test </h1>
+    <h1> STYLE ME | ADD MORE PARKS | ADD DESCRIPTION </h1>
     <?php foreach($parks as $park): ?>
         <ul>
             <h3> <?= $park['name'] . PHP_EOL  ?></h3>
@@ -41,10 +49,9 @@ $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </ul>
     <?php endforeach; ?>
 
+<!--  grabs page NUMBER/KEY from line 21-->
+<a href="?page=<?= $page - 1 ?>"> Previous Page </a>
+<a href="?page=<?= $page + 1 ?>"> Next Page </a>
+
 </body>
 </html>
-
-
-<ul>
-    <li> </li>
-</ul>

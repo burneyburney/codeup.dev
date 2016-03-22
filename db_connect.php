@@ -8,5 +8,5 @@ $dbc = new PDO(
 
 $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 //
-// db_connect.php has ran 
+// db_connect.php has ran
 //
