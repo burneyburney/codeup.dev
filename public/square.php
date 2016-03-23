@@ -2,7 +2,16 @@
 <?php
 require_once 'rectangle.php';
 
-class Square extends Rectangle{
+class Square extends Rectangle
+{
+
+  public function __construct($side)
+  {
+      parent::__construct($side, $side);
+
+
+      
+  }
 
   // returns perimter of square onscreen
   public function Perimeter(){

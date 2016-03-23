@@ -7,8 +7,8 @@
 // width x height
 class Rectangle {
 
-  public $height;
-  public $width;
+  private $height;
+  private $width;
 
   // a constructor to set the height and width on instantiation
   public function __construct($height, $width){
@@ -20,6 +20,7 @@ class Rectangle {
       return $this->height * $this->width;
   }
 }
+
 
 
 ?>
