@@ -4,19 +4,11 @@ require_once 'rectangle.php';
 
 class Square extends Rectangle{
 
-  // perimeter | returns perimeter of square..
+  // returns perimter of square onscreen
   public function Perimeter(){
     return 4 * $this->width;
-
   }
-
-
 }
-
-
-
-
-
 
 
 ?>
@@ -29,7 +21,7 @@ class Square extends Rectangle{
   <body>
     <h3> square.php </h3>
     <script>
-      console.log('square.php');
+      console.log('INCLUDED: square.php');
     </script>
   </body>
 </html>

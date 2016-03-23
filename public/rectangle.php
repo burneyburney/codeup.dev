@@ -19,7 +19,6 @@ class Rectangle {
   public function area(){
       return $this->height * $this->width;
   }
-
 }
 
 
@@ -34,7 +33,7 @@ class Rectangle {
     <h1>9.2.1</h1>
     <h2>rectangle.php</h2>
     <script>
-      console.log("rectangle.php");
+      console.log("INCLUDED: rectangle.php");
     </script>
   </body>
 </html>
