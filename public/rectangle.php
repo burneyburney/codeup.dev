@@ -11,14 +11,40 @@ class Rectangle {
   private $width;
 
   // a constructor to set the height and width on instantiation
-  public function __construct($height, $width){
-        $this->height = $height;
-        $this->width = $width;
+  public function __construct($height, $width)
+  {
+    $this->height = $height;
+    $this->width = $width;
   }
 
-  public function area(){
+  public function area()
+  {
       return $this->height * $this->width;
   }
+
+
+
+  public function setHeight($height)
+  {
+     $this->height = trim($height);
+  }
+
+  public function setHeight($width)
+  {
+      $this->width = trim($width);
+  }
+
+  public function getHeight($height)
+  {
+    return $this->height;
+  }
+
+  public function getWidth($width)
+  {
+      return $this->width;
+  }
+
+
 }
 
 
