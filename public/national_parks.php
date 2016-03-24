@@ -1,12 +1,17 @@
 <!-- national_parks.php -->
 <?php
-
-$check = is_string('1hey this is a test input form!!!!');
-    if(is_string($check)){
-        echo 'it is a string';
+$errors = [];
+$parkTextField = 'bobby';
+try{
+    if(is_string($parkTextField)){
+        throw new Exception('no!');
     }
+}catch (Exception $e) {
+    echo 'code in catch runs if exception caught!';
+}
 
-    var_dump($check);
+
+
 // var_dump($check);
 // On each page load, it should retrieve all records from the database and display them.
 
