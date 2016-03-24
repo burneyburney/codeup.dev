@@ -1,7 +1,13 @@
 <!-- national_parks.php -->
 <?php
 
-echo 'hey this is a test input form!!!!' . PHP_EOL;
+$check = is_string('1hey this is a test input form!!!!');
+    if(is_string($check)){
+        echo 'it is a string';
+    }
+
+    var_dump($check);
+// var_dump($check);
 // On each page load, it should retrieve all records from the database and display them.
 
 // Modify your query to load only four parks at a time.
