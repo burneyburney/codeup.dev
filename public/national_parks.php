@@ -1,5 +1,7 @@
 <!-- national_parks.php -->
 <?php
+
+echo 'hey this is a test input form!!!!' . PHP_EOL;
 // On each page load, it should retrieve all records from the database and display them.
 
 // Modify your query to load only four parks at a time.
@@ -51,7 +53,8 @@ $parks = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <!--  grabs page NUMBER/KEY from line 21-->
 <a href="?page=<?= $page - 1 ?>"> Previous Page </a>
-<a href="?page=<?= $page + 1 ?>"> Next Page </a>
+<a href="?page=<?= $page + 1 ?>"> Next Page     </a>
+
 
 </body>
 </html>

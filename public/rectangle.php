@@ -24,22 +24,22 @@ class Rectangle {
 
 
 
-  public function setHeight($height)
+  private function setHeight($height)
   {
      $this->height = trim($height);
   }
 
-  public function setHeight($width)
+  private function setHeight($width)
   {
       $this->width = trim($width);
   }
 
-  public function getHeight($height)
+  private function getHeight($height)
   {
     return $this->height;
   }
 
-  public function getWidth($width)
+  private function getWidth($width)
   {
       return $this->width;
   }

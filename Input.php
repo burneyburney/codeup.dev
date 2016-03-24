@@ -34,4 +34,23 @@ class Input
     // later in the curriculum.                                              //
     ///////////////////////////////////////////////////////////////////////////
     private function __construct() {}
+
+    public static function getString($key){
+        $value = self::get($key);
+        if(is_string($value)){
+            return $value;
+        } else{
+            throw new Exeception('Must be a string!');
+        }
+    }
+    public static function getNumber($key){
+        $value = self::get($key);
+        if(is_numeric($key)){
+            return (int)$value;
+        } else{
+            throw new Exception('Must be a number!');
+        }
+    }
+
+
 }
