@@ -10,8 +10,6 @@ try{
     echo 'code in catch runs if exception caught!';
 }
 
-
-
 // var_dump($check);
 // On each page load, it should retrieve all records from the database and display them.
 
