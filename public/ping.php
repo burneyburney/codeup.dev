@@ -1,7 +1,5 @@
 <?php
 
-// always require_once unless templates then you can include.
-// require_once 'functions.php';
 require_once '../Input.php';
 
 // ping.php
