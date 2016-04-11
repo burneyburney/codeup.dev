@@ -22,8 +22,6 @@ class Rectangle {
       return $this->height * $this->width;
   }
 
-
-
   private function setHeight($height)
   {
      $this->height = trim($height);
